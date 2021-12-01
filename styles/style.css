@@ -8,7 +8,7 @@
 }
 
 body {
-  background-image: url("images/home-background.png");
+  background-image: url(./images/home-background.png);
   background-size: auto;
   margin: 0;
   font-family: 'Roboto', sans-serif;
