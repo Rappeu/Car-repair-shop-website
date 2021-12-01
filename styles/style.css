@@ -1,0 +1,296 @@
+:root {
+  --red: #7f0000;
+  --dark-red: #680000;
+  --white: #ffffff;
+  --black: #000000;
+  --transparentBlack: #00000099;
+  font-size: 10px;
+}
+
+body {
+  background-image: url(/images/home-background.png);
+  background-size: auto;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+#nav {
+  top: 0;
+  position: fixed;
+  width: 100vw;
+  height: 10em;
+  background-color: var(--transparentBlack);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  gap: 10px;
+  margin-left: 2em;
+}
+
+#logo {
+  color: var(--white);
+  font-size: 6em;
+}
+
+#logoName {
+  color: var(--white);
+  margin: 0;
+  width: fit-content;
+  font-size: 5em;
+}
+
+#navLinks {
+  display: flex;
+  gap: 5vw; 
+  margin-right: 2em;
+  font-size: 2.5rem;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 300;
+}
+
+.nav-item:hover {
+  text-shadow: 0 0 2px var(--white);
+}
+
+.appointmentBtn {
+  background-color: var(--red);
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 300;
+  padding: 2px;
+  border-radius: 5px;
+}
+
+.appointmentBtn:hover {
+  background-color: var(--dark-red);
+  text-shadow: 0 0 2px var(--white);
+}
+
+#hamburgerMenu {
+  position: absolute;
+  right: 5rem;
+  height: 40px;
+  width: 40px;
+  flex-direction: column;
+  align-items: space-between;
+  visibility: hidden;
+}
+
+#hamburgerMenu:hover {
+  cursor: pointer;
+}
+
+.hamburgerLine {
+  position: absolute;
+  margin: auto 0;
+  content: "";
+  background-color: var(--white);
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+}
+
+#hamburgerLine1 {
+  top: 0;
+}
+
+#hamburgerLine2 {
+  inset: 0;
+  margin: auto;
+}
+
+#hamburgerLine3 {
+  bottom: 0;
+}
+
+#header {
+  width: fit-content;
+  margin-left: 5vw;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+
+#mainHeading {
+  font-size: 8rem;
+  font-weight: 900;
+  color: var(--red);
+  margin: 0;
+}
+
+.headMsg {
+  font-size: 5rem;
+  color: var(--white);
+  margin: 0;
+}
+
+.headBtn {
+  font-size: 3rem;
+  width: fit-content;
+  margin: 0;
+}
+
+#footer {
+  background-color: var(--black);
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  gap: 10vw;
+  bottom: 0;
+}
+
+.footer-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.footer-item-title {
+  color: var(--red);
+  margin: 10px;
+}
+
+.footer-item-content {
+  color: var(--white);
+  margin: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+  #nav {
+    height: 10rem;
+    z-index: 2;
+  }
+  #navLinks {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10rem;
+    margin: 0;
+    top: -10rem;
+  }
+  #hamburgerMenu {
+    visibility: visible;
+  }
+  #mainHeading {
+    font-size: 5rem;
+  }
+  .headMsg {
+    font-size: 3rem;
+  }
+  .headBtn {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .footer-item {
+    font-size: 1.5rem;
+  }
+  .footer-item-content {
+    text-align: center;
+    width: fit-content;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  #logoName {
+    display: none;
+  }
+  #header {
+    margin: 0;
+    text-align: center;
+    align-items: center;
+  }
+  #footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
+  }
+  #footerItem1 { grid-area: 1 / 1 / 2 / 3; }
+  #footerItem2 { grid-area: 2 / 1 / 3 / 2; }
+  #footerItem3 { grid-area: 2 / 2 / 3 / 3; } 
+
+}
+
+.hamburgerLine1 {
+  animation: hamburgerLine1Anim forwards .5s;
+}
+.hamburgerLine2 {
+  animation: hamburgerLine2Anim forwards .5s;
+}
+.hamburgerLine3 {
+  animation: hamburgerLine3Anim forwards .5s;
+}
+
+
+.hamburgerLineClose1 {
+  animation: hamburgerLine1CloseAnim forwards .5s;
+}
+.hamburgerLineClose2 {
+  animation: hamburgerLine2CloseAnim forwards .5s;
+}
+.hamburgerLineClose3 {
+  animation: hamburgerLine3CloseAnim forwards .5s;
+}
+
+@keyframes hamburgerLine1Anim {
+  from {transform: none;}
+  to {transform: rotate(45deg);}
+  from {top: 0;}
+  to {top: 17.5px;}
+}
+
+@keyframes hamburgerLine2Anim {
+  from {width: 100%;}
+  to {width: 0;}
+}
+
+@keyframes hamburgerLine3Anim {
+  from {transform: none;}
+  to {transform: rotate(-45deg);}
+  from {bottom: 0;}
+  to {bottom: 17.5px;}
+}
+
+
+@keyframes hamburgerLine1CloseAnim {
+  from {transform: rotate(45deg);}
+  to {transform: none;}
+  from {top: 17.5px;}
+  to {top: 0;}
+}
+
+@keyframes hamburgerLine2CloseAnim {
+  from {width: 0;}
+  to {width: 100%;}
+}
+
+@keyframes hamburgerLine3CloseAnim {
+  from {transform: rotate(-45deg);}
+  to {transform: none;}
+  from {bottom: 17.5px;}
+  to {bottom: 0;}
+}
+
+
+/*animation: hamburgerLine1Anim forwards .75s;*/
+/*animation: hamburgerLine3Anim forwards .75s;*/
