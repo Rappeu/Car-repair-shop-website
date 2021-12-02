@@ -1,5 +1,6 @@
 const hamburgerMenu = document.getElementById("hamburgerMenu");
 const navBar = document.getElementById("navLinks");
+const hamburgerActiveOverlay = document.createElement("div");
 
 let hamburgerMenuClicked = 0;
 
@@ -22,7 +23,8 @@ hamburgerMenu.addEventListener("click", function() {
       hamLine2.classList.remove("hamburgerLine2");
       hamLine3.classList.remove("hamburgerLine3");
 
-      console.log(hamburgerMenuClicked % 2);
+      hamburgerActiveOverlay.removeAttribute("id", "hamburgerActiveOverlay");
+      document.querySelector("body").removeChild(hamburgerActiveOverlay);
   } else {
       navBar.style.transition = "top 1s";
       navBar.style.top = "10rem";
@@ -39,7 +41,8 @@ hamburgerMenu.addEventListener("click", function() {
       hamLine2.classList.remove("hamburgerLineClose2");
       hamLine3.classList.remove("hamburgerLineClose3");
   
-      console.log(hamburgerMenuClicked % 2);
+      hamburgerActiveOverlay.setAttribute("id", "hamburgerActiveOverlay");
+      document.querySelector("body").appendChild(hamburgerActiveOverlay);
   }
 })
 
