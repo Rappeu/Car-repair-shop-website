@@ -28,9 +28,8 @@
     </div>
     <div id="navLinks">
       <a href="index.html" class="nav-item">Home</a>
-      <a href="#" class="nav-item">Price</a>
-      <a href="#" class="nav-item">Contact</a>
-      <a href="#" class="nav-item appointmentBtn">Book Appointment</a>
+      <a href="contact.html" class="nav-item">Contact</a>
+      <a href="contact.html" class="nav-item appointmentBtn">Book Appointment</a>
     </div>
     <div id="hamburgerMenu">
       <span class="hamburgerLine" id="hamburgerLine1"></span>
@@ -42,7 +41,7 @@
     <form action="#" method="post" id="contactForm">
       <div id="nameContainer">
         <label id="nameLabel" for="name">Name:</label>
-        <input type="text" id="nameInput" name="name" required>
+        <input type="text" id="nameInput" name="name" autocomplete="off" required>
       </div>
       <div id="emailContainer">
         <label id="emailLabel" for="email">Email:</label>
@@ -50,7 +49,7 @@
       </div>
       <div id="contentContainer">
         <label id="contentLabel" for="content">Message:</label>
-        <input type="textarea" id="formContentInput" name="content" required>
+        <input type="textarea" id="formContentInput" name="content" autocomplete="off" required>
       </div>
       <div id="submitContainer">
         <button type="submit" id="submitBtn">Submit</button>
